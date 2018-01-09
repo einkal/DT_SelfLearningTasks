@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transaction Display</title>
+<script>
+function display() 
+{ 
+var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(1);
+var queries = queryString.split("&");
+var total=100;
+var table = document.getElementById("product_table");
+var k=0;    
+price=0;
+qty=0;
+var country="";
+var pos=-1;
+for (var i = 0; i < queries.length; i++)
+ {
+  	
+	var cols= queries[i].split("=");	
+	pos = queries[i].indexOf("productprice");
+	if(pos!=-1)
+		 price=parseInt(cols[1]);
+		 	
+	pos = queries[i].indexOf("productquantity");
+	if(pos!=-1)
+		 qty=parseInt(cols[1]);
+	pos = queries[i].indexOf("customercountry");
+	if(pos!=-1)
+		 country=cols[1];
+	document.write("<h2>"+cols[0]+ " "+cols[1]+ "<\h2><br>");
+	
+	
+	
+ }
+total=price*qty;
+if(total>10000 && country=="USA") 
+	total=total*.90;
+document.write("<h2> Total Price: "+total);		
+}
+ </script>
+</head>
+<body>
+
+<h3>Transaction Details Display Form</h3>
+<button onclick="display()">Display</button>
+
+</table>
+
+
+
+</div>
+
+</body>
+</html>

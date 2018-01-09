@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<style>
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    background-color: #0066ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.image{
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+}
+
+
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+   
+    
+}
+</style>
+<script>
+
+	function Login() 
+	{
+    		
+		
+		var username= document.forms["loginform"]["username"].value;
+		var password= document.forms["loginform"]["password"].value;
+		
+		if((username=="Amrita") && (password=="12345"))
+			{
+			 return true;
+			}
+		else
+		{
+			document.forms["loginform"]["username"].value="";
+		        document.forms["loginform"]["password"].value="";
+ 			alert("Invalid username/password");
+			return false;
+		}
+	}
+	function Reset() 
+	{
+		alert("hello");
+		document.forms["loginform"]["username"].value="";
+		document.forms["loginform"]["password"].value="";
+	}
+
+</script>
+<body>
+
+<h2>Login Form</h2>
+
+<form name="loginform" action="productpage.html">
+  <div class="image">
+    <img src="login.jpg" alt="login" class="login_img">
+  </div>
+
+  <div class="style1">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+<br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+        
+ <br>   <input type="submit" onclick="Login()" value="login">
+    
+  </div>
+<div class="style1" style="background-color:#f1f1f1">
+    <button type="button" class="Resetbtn" onclick="Reset()" >Reset</button>
+    
+  </div>
+  
+</form>
+
+</body>
+</html>

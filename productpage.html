@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Page</title>
+<style>
+form {
+    border: 3px solid #f1f1f1;
+}
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    background-color: #0066ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+
+<h3>Product Form</h3>
+
+<div class="container">
+  <form action="productdisplay.html">
+    <label for="Product ID">Product ID</label>
+    <input type="text" name="productid" placeholder="product ID...">
+		<br>
+    <label for="Product name">Product Name</label>
+    <input type="text" name="productname" placeholder="Enter product name.."><br>
+
+ 	<label for="Product qty">Product Qty</label>
+    <input type="text" name="productquantity" placeholder="Enter product Quantity."><br>
+
+ <label for="Product price">Product Price</label>
+    <input type="text" name="productprice" placeholder="Enter product price"><br>
+ 
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
