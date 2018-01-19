@@ -1,0 +1,19 @@
+<?xmlversion="1.0"?>
+<!DOCTYPEhibernate-mappingPUBLIC"-//Hibernate/Hibernate Mapping DTD//EN"
+"<a class="vglnk" href="http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" rel="nofollow"><span>http</span><span>://</span><span>hibernate</span><span>.</span><span>sourceforge</span><span>.</span><span>net</span><span>/</span><span>hibernate</span><span>-</span><span>mapping</span><span>-</span><span>3</span><span>.</span><span>0</span><span>.</span><span>dtd</span></a>">
+<hibernate-mapping>
+<class name="com.Model.User"table="USER">
+<id name="userId"type="int"column="USER_ID">
+           <generator class="assigned"/>
+        </id>
+        <property name="name">
+            <column name="NAME"/>
+        </property>
+        <property name="email">
+            <column name="EMAIL"/>
+        </property>
+        <property name="password"type="date">
+            <column name="PASSWORD"/>
+       </property>
+    </class>
+    </hibernate-mapping>
