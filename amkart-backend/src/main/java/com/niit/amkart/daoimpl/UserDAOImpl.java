@@ -2,42 +2,49 @@ package com.niit.amkart.daoimpl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import com.niit.amkart.abstractdao.AbstractDao;
+
 import com.niit.amkart.dao.UserDAO;
 import com.niit.amkart.model.User;
-@Component
+
 @Repository("userDAO")
-public class UserDAOImpl extends AbstractDao implements UserDAO {
+@Transactional
+public class UserDAOImpl implements UserDAO {
 
 	@Autowired
-    
-	public List<User> listUsers() {
-		// TODO Auto-generated method stub
-		return null;
+	private SessionFactory sessionFactory;
+	
+	
+	public List<User> list() {
+		
+		return sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
 
-	public User getUser(String email) {
-		// TODO Auto-generated method stub
-		return null;
+	public User get(String username) {
+		
+		return (User)sessionFactory.getCurrentSession().createQuery("from User where username='"+username+"'").uniqueResult();
 	}
 
-	public void createUser(User user) {
-		// TODO Auto-generated method stub
-		persist(user);
-		return ;
+	public boolean save(User user) {
+		sessionFactory.getCurrentSession().save(user);
+		sessionFactory.getCurrentSession().flush();
+		return true;
 	}
 
-	public boolean updateUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean update(User user) {
+		sessionFactory.getCurrentSession().update(user);
+		return true;
 	}
 
-	public boolean deleteUser(String email) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean delete(User user) {
+		sessionFactory.getCurrentSession().delete(user);
+		return true;
 	}
+
+	
 
 }
