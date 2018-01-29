@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import com.niit.amkart.config.AppContextConfig;
 import com.niit.amkart.dao.UserDAO;
 import com.niit.amkart.model.User;
@@ -25,7 +24,7 @@ public class UserTest {
 	@Test
 	public void testCreateUser() {
 		
-		user.setUsername("amrita");
+		user.setUsername("Joe");
 		user.setPassword("password");
 		user.setName("Amrita");
 		assertEquals(true, userDAO.save(user));

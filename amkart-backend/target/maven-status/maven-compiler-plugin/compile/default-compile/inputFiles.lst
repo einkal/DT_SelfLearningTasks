@@ -1,5 +1,8 @@
 D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\config\AppContextConfig.java
+D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\dao\SupplierDAO.java
+D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\daoimpl\SupplierDAOImpl.java
 D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\dao\UserDAO.java
+D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\model\Supplier.java
 D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\App.java
 D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\daoimpl\UserDAOImpl.java
 D:\STSProjects\amkart-backend\src\main\java\com\niit\amkart\model\User.java

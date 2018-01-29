@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.amkart.model.Supplier;
 import com.niit.amkart.model.User;
 
 
@@ -40,7 +41,7 @@ public class AppContextConfig {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         properties.put("hibernate.show_sql", true);
-        properties.put("hibernate.hbm2ddl.auto", "update");
+        properties.put("hibernate.hbm2ddl.auto", "create");
   
         return properties;
     }
@@ -50,10 +51,11 @@ public class AppContextConfig {
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 		LocalSessionFactoryBuilder sessionFactory=new LocalSessionFactoryBuilder(dataSource);
 		sessionFactory.addAnnotatedClass(User.class);
+		sessionFactory.addAnnotatedClass(Supplier.class);
 		sessionFactory.addProperties(getHibernateProperties());
 		return sessionFactory.buildSessionFactory();
 	}
-	
+																																																																																																																																																																			
 	@Autowired
 	@Bean
 	public HibernateTransactionManager getHibernateTransactionManager(SessionFactory sessionFactory) {

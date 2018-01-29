@@ -2,4 +2,7 @@ com\niit\amkart\dao\UserDAO.class
 com\niit\amkart\config\AppContextConfig.class
 com\niit\amkart\App.class
 com\niit\amkart\daoimpl\UserDAOImpl.class
+com\niit\amkart\model\Supplier.class
 com\niit\amkart\model\User.class
+com\niit\amkart\dao\SupplierDAO.class
+com\niit\amkart\daoimpl\SupplierDAOImpl.class
