@@ -21,12 +21,19 @@ public class SupplierTest
 	
 	@Test
 	public void testCreateSupplier() {
-		System.out.println("hello");
-		supplier.setSupplierID("S00001");
-		supplier.setSupplierName("Harvey");
+		System.out.println("testing create");
+		supplier.setSupplierID("S00003");
+		supplier.setSupplierName("Ramen");
 		assertEquals(true, supplierDAO.save(supplier));
 	}
 	
-	
+	@Test
+	public void testUpdateSupplier() {
+		System.out.println("testing update");
+		supplier.setSupplierID("S00001");
+		supplier.setSupplierName("Joe");
+		assertEquals(true, supplierDAO.update(supplier));
+		
+	}
 	
 }

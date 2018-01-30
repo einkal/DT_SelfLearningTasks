@@ -17,9 +17,9 @@ public class LoginController {
   @RequestMapping(value = "/login", method = RequestMethod.GET)
   public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response)
   {
-    ModelAndView mav = new ModelAndView("login");
+    ModelAndView modelAndView = new ModelAndView("login");
    // mav.addObject("login", new Login());
-    return mav;
+    return modelAndView;
   }
   /*@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
  public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
