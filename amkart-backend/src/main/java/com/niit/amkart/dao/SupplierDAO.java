@@ -7,7 +7,7 @@ import com.niit.amkart.model.Supplier;
 public interface SupplierDAO{
 	public List<Supplier> list();
 	
-	public Supplier get(String suppliername);
+	public Supplier get(String supplierName);
 	
 	public boolean save(Supplier supplier);
 	

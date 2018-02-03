@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.amkart.model.Category;
 import com.niit.amkart.model.Supplier;
 import com.niit.amkart.model.User;
 
@@ -52,6 +53,7 @@ public class AppContextConfig {
 		LocalSessionFactoryBuilder sessionFactory=new LocalSessionFactoryBuilder(dataSource);
 		sessionFactory.addAnnotatedClass(User.class);
 		sessionFactory.addAnnotatedClass(Supplier.class);
+		sessionFactory.addAnnotatedClass(Category.class);
 		sessionFactory.addProperties(getHibernateProperties());
 		return sessionFactory.buildSessionFactory();
 	}

@@ -10,21 +10,19 @@ import org.springframework.stereotype.Component;
 public class Supplier {
 	@Id
 	private String supplierID;
-	private String suppliername;
+	private String supplierName;
 	public String getSupplierID() {
 		return supplierID;
 	}
 	public void setSupplierID(String supplierID) {
 		this.supplierID = supplierID;
 	}
-	public String getSupplierName() {
-		return suppliername;
+	public String getsupplierName() {
+		return supplierName;
 	}
-	public void setSupplierName(String supplierName) 
-	{
-		this.suppliername = supplierName;
+	public void setsupplierName(String supplierName) {
+		this.supplierName = supplierName;
 	}
-	
 	
 	
 

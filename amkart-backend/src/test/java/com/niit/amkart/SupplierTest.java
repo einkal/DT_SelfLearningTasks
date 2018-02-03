@@ -23,7 +23,7 @@ public class SupplierTest
 	public void testCreateSupplier() {
 		System.out.println("testing create");
 		supplier.setSupplierID("S00003");
-		supplier.setSupplierName("Ramen");
+		supplier.setsupplierName("Ramen");
 		assertEquals(true, supplierDAO.save(supplier));
 	}
 	
@@ -31,7 +31,7 @@ public class SupplierTest
 	public void testUpdateSupplier() {
 		System.out.println("testing update");
 		supplier.setSupplierID("S00001");
-		supplier.setSupplierName("Joe");
+		supplier.setsupplierName("Joe");
 		assertEquals(true, supplierDAO.update(supplier));
 		
 	}

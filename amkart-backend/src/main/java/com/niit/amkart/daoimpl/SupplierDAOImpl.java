@@ -25,8 +25,8 @@ public class SupplierDAOImpl implements SupplierDAO
 
 	}
 
-	public Supplier get(String suppliername) {
-		return (Supplier)sessionFactory.getCurrentSession().createQuery("from Supplier where suppliername='"+suppliername+"'").uniqueResult();
+	public Supplier get(String supplierName) {
+		return (Supplier)sessionFactory.getCurrentSession().createQuery("from Supplier where supplierName='"+supplierName+"'").uniqueResult();
 		
 	}
 
