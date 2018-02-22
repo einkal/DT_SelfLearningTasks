@@ -1,21 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: com.niit.amkart.SupplierTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.775 sec <<< FAILURE!
-testCreateSupplier(com.niit.amkart.SupplierTest)  Time elapsed: 0.094 sec  <<< ERROR!
-org.hibernate.MappingException: Unknown entity: com.niit.amkart.model.Supplier
-	at org.hibernate.metamodel.internal.MetamodelImpl.entityPersister(MetamodelImpl.java:620)
-	at org.hibernate.internal.SessionImpl.getEntityPersister(SessionImpl.java:1634)
-	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:104)
-	at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:192)
-	at org.hibernate.event.internal.DefaultSaveEventListener.saveWithGeneratedOrRequestedId(DefaultSaveEventListener.java:38)
-	at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:177)
-	at org.hibernate.event.internal.DefaultSaveEventListener.performSaveOrUpdate(DefaultSaveEventListener.java:32)
-	at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:73)
-	at org.hibernate.internal.SessionImpl.fireSave(SessionImpl.java:689)
-	at org.hibernate.internal.SessionImpl.save(SessionImpl.java:681)
-	at org.hibernate.internal.SessionImpl.save(SessionImpl.java:676)
-	at com.niit.amkart.daoimpl.SupplierDAOImpl.save(SupplierDAOImpl.java:35)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.233 sec <<< FAILURE!
+testCreateSupplier(com.niit.amkart.SupplierTest)  Time elapsed: 0.121 sec  <<< ERROR!
+javax.validation.ValidationException: HV000183: Unable to load 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
+	at org.hibernate.validator.internal.engine.ValidatorFactoryImpl.createValidator(ValidatorFactoryImpl.java:339)
+	at org.hibernate.validator.internal.engine.ValidatorContextImpl.getValidator(ValidatorContextImpl.java:122)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:113)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:205)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:82)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:589)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:463)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1435)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1421)
+	at com.niit.amkart.daoimpl.SupplierDAOImpl.save(SupplierDAOImpl.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -28,7 +29,7 @@ org.hibernate.MappingException: Unknown entity: com.niit.amkart.model.Supplier
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
-	at com.sun.proxy.$Proxy30.save(Unknown Source)
+	at com.sun.proxy.$Proxy53.save(Unknown Source)
 	at com.niit.amkart.SupplierTest.testCreateSupplier(SupplierTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

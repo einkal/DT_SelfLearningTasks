@@ -10,10 +10,12 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.amkart.dao.CategoryDAO;
 import com.niit.amkart.model.Category;
+import com.niit.amkart.model.Product;
 import com.niit.amkart.model.Supplier;
 @Repository("CategoryDAO")
 @Transactional
-public class CategoryDAOImpl implements CategoryDAO{
+public class CategoryDAOImpl implements CategoryDAO
+{
 	@Autowired
 	private SessionFactory sessionFactory;
 	public List<Category> list() 
@@ -40,7 +42,17 @@ public class CategoryDAOImpl implements CategoryDAO{
 
 	public boolean delete(Category category) {
 		sessionFactory.getCurrentSession().delete(category);
-		return false;
+		return true;
+	}
+
+	public Category getByID(String categoryID) {
+		
+		 return (Category)sessionFactory.getCurrentSession().createQuery("from Category where categoryID='"+categoryID+"'").uniqueResult();
+	}
+
+	public Category searchByCategory(String categoryName) {
+		
+		 return (Category)sessionFactory.getCurrentSession().createQuery("from Category where categoryName like '%"+categoryName+"%'").uniqueResult();
 	}
 
 }

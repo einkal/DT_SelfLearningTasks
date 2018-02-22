@@ -8,7 +8,7 @@ public interface UserDAO {
 
 	public List<User> list();
 	
-	public User get(String username);
+	public User get(String email);
 	
 	public boolean save(User user);
 	

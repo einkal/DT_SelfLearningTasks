@@ -27,7 +27,7 @@ public class SupplierTest
 		assertEquals(true, supplierDAO.save(supplier));
 	}
 	
-	@Test
+	/*@Test
 	public void testUpdateSupplier() {
 		System.out.println("testing update");
 		supplier.setSupplierID("S00001");
@@ -35,5 +35,5 @@ public class SupplierTest
 		assertEquals(true, supplierDAO.update(supplier));
 		
 	}
-	
+	*/
 }

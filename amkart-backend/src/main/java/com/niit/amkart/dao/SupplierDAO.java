@@ -8,7 +8,7 @@ public interface SupplierDAO{
 	public List<Supplier> list();
 	
 	public Supplier get(String supplierName);
-	
+	public Supplier getByID(String supplierID);
 	public boolean save(Supplier supplier);
 	
 	public boolean update(Supplier supplier);

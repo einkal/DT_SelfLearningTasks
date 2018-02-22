@@ -11,21 +11,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.amkart.model.Cart;
+import com.niit.amkart.model.CartItem;
 import com.niit.amkart.model.Category;
+
+import com.niit.amkart.model.Orders;
+import com.niit.amkart.model.Product;
 import com.niit.amkart.model.Supplier;
 import com.niit.amkart.model.User;
-
 
 @Configuration
 @ComponentScan(basePackages="com.niit")
 @EnableTransactionManagement
 public class AppContextConfig {
 
-	@Bean
+	@Bean(name="dataSource")
 	public DataSource getDataSource() {
 		
 		BasicDataSource dataSource=new BasicDataSource();
@@ -54,6 +57,10 @@ public class AppContextConfig {
 		sessionFactory.addAnnotatedClass(User.class);
 		sessionFactory.addAnnotatedClass(Supplier.class);
 		sessionFactory.addAnnotatedClass(Category.class);
+		sessionFactory.addAnnotatedClass(Product.class);
+		sessionFactory.addAnnotatedClass(Cart.class);
+		sessionFactory.addAnnotatedClass(Orders.class);
+		sessionFactory.addAnnotatedClass(CartItem.class);
 		sessionFactory.addProperties(getHibernateProperties());
 		return sessionFactory.buildSessionFactory();
 	}

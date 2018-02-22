@@ -8,13 +8,16 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.niit.amkart.dao.CartDAO;
 import com.niit.amkart.dao.UserDAO;
+import com.niit.amkart.model.Cart;
 import com.niit.amkart.model.User;
 
 @Repository("userDAO")
 @Transactional
 public class UserDAOImpl implements UserDAO {
-
+	@Autowired 
+	CartDAO cartDAO;
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -24,13 +27,17 @@ public class UserDAOImpl implements UserDAO {
 		return sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
 
-	public User get(String username) {
+	public User get(String email) {
 		
-		return (User)sessionFactory.getCurrentSession().createQuery("from User where username='"+username+"'").uniqueResult();
+		return (User)sessionFactory.getCurrentSession().createQuery("from User where email='"+email+"'").uniqueResult();
 	}
 
 	public boolean save(User user) {
+		Cart cart=new Cart();
+		sessionFactory.getCurrentSession().save(cart);
+		user.setCart(cart);
 		sessionFactory.getCurrentSession().save(user);
+		cart.setCartUserDetails(user);
 		sessionFactory.getCurrentSession().flush();
 		return true;
 	}

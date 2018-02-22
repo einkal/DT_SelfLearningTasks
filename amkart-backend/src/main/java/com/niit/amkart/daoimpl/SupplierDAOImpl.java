@@ -47,4 +47,10 @@ public class SupplierDAOImpl implements SupplierDAO
 		sessionFactory.getCurrentSession().delete(supplier);
 		return true;
 	}
+
+	public Supplier getByID(String supplierID) {
+		// TODO Auto-generated method stub
+		 return (Supplier)sessionFactory.getCurrentSession().createQuery("from Supplier where supplierID='"+supplierID+"'").uniqueResult();
+
+	}
 }

@@ -24,7 +24,7 @@ public class UserTest {
 	@Test
 	public void testCreateUser() {
 		
-		user.setUsername("Morgan");
+		user.setEmail("Morgan");
 		user.setPassword("123456");
 		user.setName("Morgan Morris");
 		assertEquals(true, userDAO.save(user));

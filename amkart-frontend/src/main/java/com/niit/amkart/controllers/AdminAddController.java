@@ -1,32 +1,33 @@
 package com.niit.amkart.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.amkart.dao.SupplierDAO;
-import com.niit.amkart.model.Supplier;
+import com.niit.amkart.dao.CategoryDAO;
+import com.niit.amkart.model.Category;
 
 @Controller
 public class AdminAddController {
 	
 	@Autowired
-	private SupplierDAO supplierDAO;
+	private CategoryDAO categoryDAO;
 	
 	@RequestMapping(value = "/AddEntities", method = RequestMethod.GET)
-	 public ModelAndView showForm() 
+	 public ModelAndView showForm(ModelMap model) 
 	{
-      	return new ModelAndView("AddEntities");
+		List<Category> categoryList=new ArrayList<Category>(categoryDAO.list());
+		model.addAttribute("categoryList", categoryList);
+		return (new ModelAndView("AddEntities"));
     }
- 
-	
    
-    
+	
+	
 }
 
